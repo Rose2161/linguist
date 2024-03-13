@@ -1,6 +1,6 @@
 ---
 name: bikeshed
-version: bf3136d31f2a87677999ff304772d73833896ddc
+version: 584813e6380533a19c6656594c810bf974854e68
 type: git_submodule
 homepage: https://github.com/tabatkins/bikeshed.git
 license: other

@@ -1,6 +1,6 @@
 ---
 name: vscode-jest
-version: bf9a5d877d2ca62e7a8c539aad1242ff9120d036
+version: 0c57873f91138961f90fedeb5fd1f0da9d45c601
 type: git_submodule
 homepage: https://github.com/jest-community/vscode-jest
 license: mit

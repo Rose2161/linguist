@@ -1,6 +1,6 @@
 ---
 name: vscode-slice
-version: bb750a498262e40ca76e9aae927c9619280351b6
+version: a4aacfa8bc1ec6cc925dfd891dd75dfbf9df207d
 type: git_submodule
 homepage: https://github.com/zeroc-ice/vscode-slice
 license: bsd-3-clause

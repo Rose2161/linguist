@@ -34,6 +34,13 @@ class TestHeuristics < Minitest::Test
     assert_equal [], Heuristics.call(file_blob("Markdown/symlink.md"), [Language["Markdown"]])
   end
 
+  def test_no_match_if_regexp_timeout
+    skip("This test requires Ruby 3.2.0 or later") if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('3.2.0')
+
+    Regexp.any_instance.stubs(:match).raises(Regexp::TimeoutError)
+    assert_equal [], Heuristics.call(file_blob("#{fixtures_path}/Generic/stl/STL/cube1.stl"), [Language["STL"]])
+  end
+
   # alt_name is a file name that will be used instead of the file name of the
   # original sample. This is used to force a sample to go through a specific
   # heuristic even if its extension doesn't match.
@@ -226,6 +233,13 @@ class TestHeuristics < Minitest::Test
     })
   end
 
+  def test_app_by_heuristics
+    assert_heuristics({
+      "Erlang" => Dir.glob("#{fixtures_path}/Generic/app/Erlang/*"),
+      nil => Dir.glob("#{fixtures_path}/Generic/app/nil/*")
+    })
+  end
+
   def test_as_by_heuristics
     assert_heuristics({
       "ActionScript" => all_fixtures("ActionScript", "*.as"),
@@ -260,7 +274,8 @@ class TestHeuristics < Minitest::Test
     assert_heuristics({
       "FreeBasic" => all_fixtures("FreeBasic", "*.bas"),
       "BASIC" => all_fixtures("BASIC", "*.bas"),
-      nil => all_fixtures("VBA", "*.bas")
+      "VBA" => all_fixtures("VBA", "*.bas"),
+      "Visual Basic 6.0" => all_fixtures("Visual Basic 6.0", "*.bas")
     })
   end
 
@@ -423,7 +438,7 @@ class TestHeuristics < Minitest::Test
       "Text" => all_fixtures("Text", "*.fr")
     })
   end
-  
+
   def test_frm_by_heuristics
     assert_heuristics({
       "VBA" => all_fixtures("VBA", "*.frm"),
@@ -492,6 +507,13 @@ class TestHeuristics < Minitest::Test
   def test_gsh_by_heuristics
     assert_heuristics({
       "GSC" => all_fixtures("GSC", "*.gsh")
+    })
+  end
+
+  def test_gts_by_heuristics
+    assert_heuristics({
+      "Gerber Image" => all_fixtures("Gerber Image", "*.gts"),
+      "Glimmer TS" => all_fixtures("Glimmer TS", "*.gts"),
     })
   end
 
@@ -564,6 +586,13 @@ class TestHeuristics < Minitest::Test
       "Lex" => all_fixtures("Lex", "*.l"),
       "Roff" => all_fixtures("Roff", "*.l"),
       "PicoLisp" => all_fixtures("PicoLisp", "*.l")
+    })
+  end
+
+  def test_lean_by_heuristics
+    assert_heuristics({
+      "Lean" => all_fixtures("Lean", "*.lean"),
+      "Lean 4" => all_fixtures("Lean 4", "*.lean")
     })
   end
 
@@ -666,6 +695,13 @@ class TestHeuristics < Minitest::Test
     })
   end
 
+  def test_mojo_by_heuristics
+    assert_heuristics({
+      "Mojo" => all_fixtures("Mojo", "*.mojo"),
+      "XML" => all_fixtures("XML", "*.mojo"),
+    })
+  end
+
   def test_ms_by_heuristics
     assert_heuristics({
       "Roff" => all_fixtures("Roff", "*.ms"),
@@ -695,6 +731,13 @@ class TestHeuristics < Minitest::Test
     assert_heuristics({
       "NewLisp" => all_fixtures("NewLisp", "*.nl"),
       "NL" => all_fixtures("NL", "*.nl")
+    })
+  end
+
+  def test_nu_by_heuristics
+    assert_heuristics({
+      "Nushell" => all_fixtures("Nushell", "*.nu"),
+      "Nu" => all_fixtures("Nu", "*.nu")
     })
   end
 
@@ -731,6 +774,14 @@ class TestHeuristics < Minitest::Test
     assert_heuristics({
       "OpenStep Property List" => all_fixtures("OpenStep Property List", "*.plist"),
       "XML Property List" => all_fixtures("XML Property List", "*.plist")
+    })
+  end
+
+  def test_plt_by_heuristics
+    assert_heuristics({
+      "Prolog" => all_fixtures("Prolog", "*.plt"),
+      # Gnuplot lacks a heuristic
+      nil => all_fixtures("Gnuplot", "*.plt")
     })
   end
 
@@ -895,6 +946,13 @@ class TestHeuristics < Minitest::Test
     })
   end
 
+  def test_sw_by_heuristics
+    assert_heuristics({
+      "Sway" => all_fixtures("Sway", "*.sw"),
+      "XML" => all_fixtures("XML", "*.sw")
+    })
+  end
+
   def test_t_by_heuristics
     # Turing not fully covered.
     assert_heuristics({
@@ -910,6 +968,12 @@ class TestHeuristics < Minitest::Test
     assert_heuristics({
       "Java Server Pages" => Dir.glob("#{fixtures_path}/Generic/tag/Java Server Pages/*"),
       nil => Dir.glob("#{fixtures_path}/Generic/tag/nil/*")
+    })
+  end
+
+  def test_tlv_by_heuristics
+    assert_heuristics({
+      "TL-Verilog" => all_fixtures("TL-Verilog", "*.tlv"),
     })
   end
 
@@ -946,6 +1010,13 @@ class TestHeuristics < Minitest::Test
       "Adblock Filter List" => all_fixtures("Adblock Filter List", "*.txt"),
       "Vim Help File" => all_fixtures("Vim Help File", "*.txt"),
       "Text" => all_fixtures("Text", "*.txt")
+    })
+  end
+
+  def test_typ_by_heuristics
+    assert_heuristics({
+      "Typst" => all_fixtures("Typst", "*.typ"),
+      "XML" => all_fixtures("XML", "*.typ")
     })
   end
 

@@ -1,6 +1,6 @@
 ---
 name: godot-vscode-plugin
-version: '0636797c22bf1e23a41fd24d55cdb9be62e0c992'
+version: 5cef96316208d76795c9763291889b92f2d84d4b
 type: git_submodule
 homepage: https://github.com/godotengine/godot-vscode-plugin
 license: mit
