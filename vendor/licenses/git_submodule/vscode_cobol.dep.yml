@@ -1,6 +1,6 @@
 ---
 name: vscode_cobol
-version: 02acca4f1bbdf723a538732ea83c1fea7054bd50
+version: 25844a092982f00d9749d086be3ea871c5c7d9e6
 type: git_submodule
 homepage: https://github.com/spgennard/vscode_cobol.git
 license: mit

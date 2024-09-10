@@ -1,6 +1,6 @@
 ---
 name: vscode-antlers-language-server
-version: c22ee64f1212cb7f92622398f1fe2db5acb0ce89
+version: ad85f2b38569749e8b0238e7c51adfaf1a043f50
 type: git_submodule
 homepage: https://github.com/Stillat/vscode-antlers-language-server.git
 license: mit

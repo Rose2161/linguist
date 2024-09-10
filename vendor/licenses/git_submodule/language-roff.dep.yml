@@ -1,6 +1,6 @@
 ---
 name: language-roff
-version: d3feea6981a2cd0d20d9e61252245ec3be23bfb8
+version: 5f5dc9c05bc85578f5541224d68a943587698233
 type: git_submodule
 homepage: https://github.com/Alhadis/language-roff
 license: isc

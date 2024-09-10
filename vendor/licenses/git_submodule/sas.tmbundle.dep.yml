@@ -1,6 +1,6 @@
 ---
 name: sas.tmbundle
-version: f24cf2992e98ab566c72b725c7f66f5963393556
+version: 7a70af22840d2fe04e17634685bab7b529613822
 type: git_submodule
 homepage: https://github.com/rpardee/sas.tmbundle
 license: mit

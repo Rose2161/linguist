@@ -1,6 +1,6 @@
 ---
 name: vscode-vlang
-version: '0946ca331cb29a36374f494595a035a627723fbd'
+version: d8cb873de10a3e20f10dd33f09738441dba44ee2
 type: git_submodule
 homepage: https://github.com/0x9ef/vscode-vlang
 license: mit

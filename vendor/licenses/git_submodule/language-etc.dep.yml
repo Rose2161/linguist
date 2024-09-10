@@ -1,6 +1,6 @@
 ---
 name: language-etc
-version: '068a4ea3dac0beb14f14e2c23a7e2eba43bd909d'
+version: 6e5bcf215c352f2ea12abc54b95d251ed9ceb3c4
 type: git_submodule
 homepage: https://github.com/Alhadis/language-etc
 license: isc
