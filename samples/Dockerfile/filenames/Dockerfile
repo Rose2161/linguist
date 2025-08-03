@@ -1,6 +1,6 @@
 # This file describes the standard way to build Docker, using docker
 docker-version 0.4.2
-from	ubuntu:12.04
+from	ubuntu:22.04
 maintainer	Solomon Hykes <solomon@dotcloud.com>
 # Build dependencies
 run	apt-get install -y -q curl
