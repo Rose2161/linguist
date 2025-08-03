@@ -1,7 +1,5 @@
-FROM golang:1.25rc1
-
+FROM golang:1.25rc2
 WORKDIR /go/src/github.com/github/linguist/tools/grammars
-
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
 	apt-get update && \
 	apt-get install -y nodejs cmake && \
