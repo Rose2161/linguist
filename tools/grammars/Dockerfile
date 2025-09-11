@@ -1,4 +1,4 @@
-FROM golang:1.25rc2
+FROM golang:1.25.1
 WORKDIR /go/src/github.com/github/linguist/tools/grammars
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
 	apt-get update && \
