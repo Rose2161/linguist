@@ -370,7 +370,7 @@ marker = "python_version >= \"2.7.9\" and python_version < \"2.8.0\" or python_v
 name = "future"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
-version = "0.18.2"
+version = "0.18.3"
 
 [[package]]
 category = "dev"
